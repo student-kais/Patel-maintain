@@ -486,13 +486,81 @@ tr:hover td {
 }
 
 /* Responsive Grid Shims */
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
 @media (min-width: 768px) {
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .md\:grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+  
+  .md\:flex-row {
+    flex-direction: row !important;
+  }
+  
+  .md\:items-center {
+    align-items: center !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 1rem;
+  }
+  
+  .table-container {
+    margin-right: -1rem;
+    margin-left: -1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  /* Automatically wrap flex-between headers on mobile, but NOT list items */
+  .mb-6.flex.justify-between,
+  .mb-8.flex.justify-between {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Specific fix for the inventory search/filter bar */
+  .glass-panel.flex.justify-between.gap-4 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Ensure inputs inside the glass panel take full width on mobile */
+  .glass-panel.flex.justify-between.gap-4 .flex {
+    flex-wrap: wrap;
+  }
+  
+  /* Reduce padding on mobile for glass panels */
+  .glass-panel.p-6 {
+    padding: 1rem;
+  }
+  
+  /* Reduce gap in grids on mobile */
+  .grid {
+    gap: 1rem !important;
+  }
+  
+  /* Make all bottom margins slightly smaller */
+  .mb-8 {
+    margin-bottom: 1.5rem;
+  }
+  .mb-6 {
+    margin-bottom: 1rem;
   }
 }
 

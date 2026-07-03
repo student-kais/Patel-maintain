@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useInventory } from '../context/InventoryContext';
 import Sidebar from './Sidebar';
-import { Bell, User } from 'lucide-react';
+import { Bell, User, Menu } from 'lucide-react';
 import './Layout.css';
 
 const Layout = () => {
     const { user } = useAuth();
     const { inventory } = useInventory();
     const navigate = useNavigate();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const lowStockCount = inventory.filter(i => i.stock < 10).length;
     return (
         <div className="app-container">
-            <Sidebar />
+            <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
             <main className="main-content">
                 <header className="top-bar glass-panel">
-                    <div></div>
+                    <div className="mobile-menu-btn">
+                        <button className="icon-btn" onClick={() => setIsSidebarOpen(true)}>
+                            <Menu size={20} />
+                        </button>
+                    </div>
 
                     <div className="top-actions">
                         <button

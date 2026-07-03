@@ -83,7 +83,7 @@ const Inventory = () => {
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
                     <div className="glass-panel p-6 w-full max-w-md m-4 animate-fade-in">
                         <h3 className="text-xl font-bold mb-4 text-white">Edit Part</h3>
-                        <form onSubmit={handleEditSubmit} className="grid grid-cols-2 gap-4">
+                        <form onSubmit={handleEditSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="col-span-2">
                                 <label className="text-dim text-sm block mb-1">Part Name</label>
                                 <input

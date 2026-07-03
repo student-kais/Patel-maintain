@@ -108,3 +108,38 @@
     background: rgba(239, 68, 68, 0.1);
     color: #fca5a5;
 }
+
+.mobile-close-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 40;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .sidebar-overlay {
+        display: block;
+    }
+    
+    .mobile-close-btn {
+        display: block;
+    }
+}

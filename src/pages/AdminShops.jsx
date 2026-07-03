@@ -99,7 +99,7 @@ const AdminShops = () => {
                         </div>
 
                         <form onSubmit={handleAddShop} className="flex flex-col gap-4">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <FormGroup label="Shop Name" icon={Store}>
                                     <input
                                         type="text" required className="input-glass" placeholder="Patel Spares"
@@ -114,7 +114,7 @@ const AdminShops = () => {
                                 </FormGroup>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <FormGroup label="Mobile Number" icon={Phone}>
                                     <input
                                         type="tel" required className="input-glass" placeholder="97246XXXXX"
@@ -129,7 +129,7 @@ const AdminShops = () => {
                                 </FormGroup>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <FormGroup label="Location / City" icon={MapPin}>
                                     <input
                                         type="text" className="input-glass" placeholder="Ahmedabad"
